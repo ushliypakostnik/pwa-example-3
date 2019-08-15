@@ -1,100 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch, Link } from "react-router-dom";
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import GUIDELINE from '../guideline';
+import GUIDELINE, { GlobalStyle } from '../guideline';
 
 import PAGES from '../content';
 
 import logo from '../images/logo.svg';
 
-const GlobalStyle = createGlobalStyle`
-  #root {
-    height: 100%;
-  }
-
-  #html {
-    height: 100%;
-  }
-
-  body {
-    margin: 0
-    padding: 0;
-    height: 100%;
-    color: ${GUIDELINE.color_text};
-    background-color: ${GUIDELINE.color_text};
-    backface-visibility: hidden;
-    font-family:  ${GUIDELINE.fontfamily_sans};
-    font-size:  ${GUIDELINE.fontsize_small}px;
-    line-height: ${GUIDELINE.lineheight_small}px;
-    letter-spacing: ${GUIDELINE.letterspacing_normal};
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  @supports (height: 100vh) {
-    #root,
-    html,
-    body {
-      height: 100vh;
-    }
-  }
-
-  a {
-    color: ${GUIDELINE.color_link};
-    text-decoration: none;
-
-    &:hover {
-      color: ${GUIDELINE.color_link_hover};
-    }
-  }
-
-  ul {
-    padding-left: 0;
-    list-style: none;
-  }
-
-  button,
-  input,
-  textarea,
-  select,
-  a {
-    outline: none !important;
-
-    &:hover,
-    &:active,
-    &:focus {
-      outline: none !important;
-    }
-  }
-
-  // Placeholders
-  ::-webkit-input-placeholder,
-  ::-moz-placeholder,
-  :-moz-placeholder,
-  :-ms-input-placeholder {
-    color: ${GUIDELINE.color_placeholder};
-  }
-
-  img {
-    border-style: none; // Remove the border on images inside links in IE 10.
-  }
-
-  button,
-  input {
-    overflow: visible; // Show the overflow in Edge
-  }
-
-  button,
-  select {
-    text-transform: none; // Remove the inheritance of text transform in Firefox.
-  }
-
-  textarea {
-    overflow: auto; // Remove the default vertical scrollbar in IE 10+.
-  }
-`
 const AppWrapper = styled.div`
   height: 100vh;
   text-align: center;
